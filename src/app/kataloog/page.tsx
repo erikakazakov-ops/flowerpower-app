@@ -29,14 +29,17 @@ export default function KatalogiPage() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-[#0d0d0d] py-16 border-b border-[#1f1f1f]">
+    <div className="min-h-screen bg-white">
+      {/* Header — lilac */}
+      <div className="bg-[#EDE0FF] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-6xl font-black mb-4">
-            Lille<span className="text-[#E8195A]">kataloog</span>
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#E8195A] uppercase mb-4">Meie kollektsioon</p>
+          <h1
+            className="text-5xl sm:text-6xl text-gray-900"
+            style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+          >
+            Lillekataloog
           </h1>
-          <p className="text-gray-400 text-lg">Värskelt saabunud, hoolikalt valitud</p>
         </div>
       </div>
 
@@ -48,76 +51,73 @@ export default function KatalogiPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
                   activeCategory === cat
                     ? "bg-[#E8195A] text-white"
-                    : "bg-[#1a1a1a] text-gray-300 hover:bg-[#E8195A]/20 hover:text-[#E8195A] border border-[#2a2a2a]"
+                    : "bg-[#FFF0F5] text-gray-600 hover:bg-pink-100"
                 }`}
               >
                 {cat}
               </button>
             ))}
           </div>
-
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-[#1a1a1a] border border-[#2a2a2a] text-white rounded-xl px-4 py-2 text-sm focus:border-[#E8195A] outline-none"
+            className="bg-white border border-gray-200 text-gray-700 rounded-xl px-4 py-2 text-sm focus:border-[#E8195A] focus:outline-none"
           >
-            <option value="default">Sorteerimi: vaikimisi</option>
+            <option value="default">Vaikimisi</option>
             <option value="price-asc">Hind: odavamast</option>
             <option value="price-desc">Hind: kallimast</option>
             <option value="name">Nimi: A–Z</option>
           </select>
         </div>
 
-        <p className="text-gray-500 text-sm mb-6">{filtered.length} toodet</p>
+        <p className="text-gray-400 text-xs tracking-wide mb-8 uppercase">{filtered.length} toodet</p>
 
-        {/* Product grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filtered.map((product) => (
             <div
               key={product.id}
-              className="bg-[#141414] border border-[#2a2a2a] rounded-2xl overflow-hidden hover:border-[#E8195A] hover:-translate-y-2 transition-all group"
+              className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className={`w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105 ${!product.inStock ? "grayscale opacity-60" : ""}`}
+                  className={`w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105 ${!product.inStock ? "grayscale opacity-50" : ""}`}
                 />
                 {!product.inStock && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="bg-black/70 text-white font-bold px-4 py-2 rounded-full text-sm">Otsas</span>
+                    <span className="bg-white/80 text-gray-500 font-medium px-4 py-1.5 rounded-full text-xs">Otsas</span>
                   </div>
                 )}
-                <div className="absolute top-3 left-3 bg-[#0a0a0a]/80 text-xs text-gray-300 px-3 py-1 rounded-full backdrop-blur-sm">
+                <div className="absolute top-3 left-3 bg-white text-xs text-gray-500 px-3 py-1 rounded-full shadow-sm">
                   {product.category}
                 </div>
                 {product.inStock && (
-                  <div className="absolute top-3 right-3 bg-green-500/20 border border-green-500/40 text-green-400 text-xs px-2 py-1 rounded-full">
+                  <div className="absolute top-3 right-3 bg-green-50 border border-green-200 text-green-600 text-xs px-2.5 py-1 rounded-full">
                     Laos
                   </div>
                 )}
               </div>
-
               <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">{product.name}</h3>
-                <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-2">{product.description}</p>
+                <h3 className="font-semibold text-gray-900 mb-1">{product.name}</h3>
+                <p className="text-gray-400 text-xs mb-4 leading-relaxed line-clamp-2">{product.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black text-[#E8195A]">{product.price.toFixed(2)} €</span>
+                  <span className="text-xl font-bold text-[#E8195A]">{product.price.toFixed(2)} €</span>
                   <button
                     onClick={() => handleAdd(product)}
                     disabled={!product.inStock}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                    className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
                       !product.inStock
-                        ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+                        ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                         : added === product.id
                         ? "bg-green-500 text-white"
-                        : "bg-[#E8195A] text-white hover:bg-[#c9144a] hover:scale-105"
+                        : "bg-[#E8195A] text-white hover:bg-[#c9144a]"
                     }`}
                   >
-                    {added === product.id ? "✓ Lisatud" : !product.inStock ? "Otsas" : "Lisa korvi"}
+                    {added === product.id ? "Lisatud" : !product.inStock ? "Otsas" : "Lisa korvi"}
                   </button>
                 </div>
               </div>
@@ -126,10 +126,9 @@ export default function KatalogiPage() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-24 text-gray-500">
-            <div className="text-6xl mb-4">🌿</div>
-            <p className="text-xl font-semibold">Selles kategoorias pole tooteid</p>
-            <button onClick={() => setActiveCategory("Kõik")} className="mt-4 text-[#E8195A] hover:underline">
+          <div className="text-center py-24 text-gray-400">
+            <p className="text-lg font-medium text-gray-500 mb-2">Selles kategoorias pole tooteid</p>
+            <button onClick={() => setActiveCategory("Kõik")} className="text-[#E8195A] text-sm hover:underline">
               Näita kõiki tooteid
             </button>
           </div>

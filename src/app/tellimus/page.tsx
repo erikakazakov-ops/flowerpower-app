@@ -3,15 +3,19 @@ import { subscriptionPlans } from "@/lib/data";
 
 export default function TellimusPage() {
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="bg-[#0d0d0d] py-16 border-b border-[#1f1f1f]">
+    <div className="min-h-screen bg-white">
+      {/* Header — pink */}
+      <div className="bg-[#E8195A] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-6xl font-black mb-4">
-            Tellimis<span className="text-[#E8195A]">plaanid</span>
+          <p className="text-xs font-semibold tracking-[0.25em] text-white/60 uppercase mb-4">Paindlikud plaanid</p>
+          <h1
+            className="text-5xl sm:text-6xl text-white mb-4"
+            style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+          >
+            Tellimisplaanid
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Vali endale parim plaan. Katkesta igal ajal, ilma penaltita.
+          <p className="text-white/80 text-lg max-w-xl mx-auto">
+            Katkesta igal ajal, ilma penaltita.
           </p>
         </div>
       </div>
@@ -22,49 +26,47 @@ export default function TellimusPage() {
           {subscriptionPlans.map((plan) => (
             <div
               key={plan.id}
-              className={`relative bg-[#141414] border rounded-2xl overflow-hidden flex flex-col transition-all hover:scale-102 ${
+              className={`bg-white border rounded-2xl overflow-hidden flex flex-col shadow-sm transition-all hover:-translate-y-1 ${
                 plan.popular
-                  ? "border-[#E8195A] shadow-[0_0_60px_rgba(232,25,90,0.25)]"
-                  : "border-[#2a2a2a] hover:border-[#E8195A]"
+                  ? "border-[#E8195A] shadow-[0_8px_40px_rgba(232,25,90,0.15)]"
+                  : "border-gray-100 hover:shadow-md"
               }`}
             >
               {plan.popular && (
-                <div className="bg-[#E8195A] text-white text-xs font-black text-center py-2.5 tracking-widest uppercase">
-                  ✦ Populaarseim valik ✦
+                <div className="bg-[#E8195A] text-white text-xs font-semibold text-center py-2.5 tracking-widest uppercase">
+                  Populaarseim valik
                 </div>
               )}
-
               <div className="relative overflow-hidden">
                 <img src={plan.image} alt={plan.name} className="w-full h-52 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
               </div>
-
               <div className="p-8 flex flex-col flex-1">
-                <div className="mb-6">
-                  <h2 className="text-3xl font-black mb-2">{plan.name}</h2>
-                  <p className="text-gray-400">{plan.description}</p>
+                <h2
+                  className="text-3xl text-gray-900 mb-2"
+                  style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+                >
+                  {plan.name}
+                </h2>
+                <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
+                <div className="flex items-end gap-1 mb-8">
+                  <span className="text-5xl font-bold text-[#E8195A]">{plan.price}€</span>
+                  <span className="text-gray-400 pb-1.5 text-sm">/{plan.period}</span>
                 </div>
-
-                <div className="flex items-end gap-2 mb-8">
-                  <span className="text-5xl font-black text-[#E8195A]">{plan.price}€</span>
-                  <span className="text-gray-500 pb-2">/{plan.period}</span>
-                </div>
-
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm">
-                      <span className="text-[#E8195A] font-black mt-0.5">✓</span>
-                      <span className="text-gray-300">{f}</span>
+                    <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
+                      <span className="text-[#E8195A] font-bold mt-0.5">+</span>
+                      {f}
                     </li>
                   ))}
                 </ul>
-
                 <Link
                   href={`/kassas?plan=${plan.id}`}
-                  className={`block w-full text-center py-4 rounded-full font-black text-lg transition-all ${
+                  className={`block w-full text-center py-3.5 rounded-full font-semibold text-sm transition-all ${
                     plan.popular
                       ? "bg-[#E8195A] text-white hover:bg-[#c9144a]"
-                      : "border-2 border-[#E8195A] text-[#E8195A] hover:bg-[#E8195A] hover:text-white"
+                      : "border border-[#E8195A] text-[#E8195A] hover:bg-[#E8195A] hover:text-white"
                   }`}
                 >
                   Vali {plan.name}
@@ -74,56 +76,45 @@ export default function TellimusPage() {
           ))}
         </div>
 
-        {/* FAQ */}
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-black text-center mb-10">
-            Korduma kippuvad <span className="text-[#E8195A]">küsimused</span>
+        {/* FAQ — lilac block */}
+        <div className="bg-[#EDE0FF] rounded-3xl p-10 mb-16">
+          <h2
+            className="text-3xl text-gray-900 text-center mb-10"
+            style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+          >
+            Korduma kippuvad küsimused
           </h2>
-
-          <div className="space-y-4">
+          <div className="max-w-2xl mx-auto space-y-3">
             {[
-              {
-                q: "Millal toimub kohaletoimetamine?",
-                a: "Toimetame lilled kohale esmaspäevast reedeni kl 9–18. Saad valida eelistatud päeva tellimuse vormistamisel.",
-              },
-              {
-                q: "Kas saan tellimuse tühistada igal ajal?",
-                a: "Jah! Sa saad oma tellimuse tühistada, peatada või vaheta plaani igal ajal oma kontolt. Minimaalne perioodi ei ole.",
-              },
-              {
-                q: "Millised piirkonnad on kaetud?",
-                a: "Praegu toimetame lilli üle kogu Tallinna tasuta. Tartu ja Pärnu elanike jaoks on mõningane lisatasu.",
-              },
-              {
-                q: "Mis juhtub, kui lilled ei ole rahuldavad?",
-                a: "Kui lilled ei vasta ootustele, võtke meiega kohe ühendust. Tagastame raha või asendame kohe.",
-              },
+              { q: "Millal toimub kohaletoimetamine?", a: "Toimetame lilled kohale esmaspäevast reedeni kl 9–18. Saad valida eelistatud päeva tellimuse vormistamisel." },
+              { q: "Kas saan tellimuse tühistada igal ajal?", a: "Jah! Sa saad oma tellimuse tühistada, peatada või vahetada plaani igal ajal oma kontolt. Minimaalset perioodi ei ole." },
+              { q: "Millised piirkonnad on kaetud?", a: "Praegu toimetame lilli üle kogu Tallinna tasuta. Tartu ja Pärnu elanike jaoks on mõningane lisatasu." },
+              { q: "Mis juhtub, kui lilled ei ole rahuldavad?", a: "Kui lilled ei vasta ootustele, võtke meiega kohe ühendust. Tagastame raha või asendame kohe." },
             ].map((faq) => (
-              <details key={faq.q} className="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 group cursor-pointer">
-                <summary className="flex items-center justify-between font-bold text-white list-none">
+              <details key={faq.q} className="bg-white rounded-xl p-5 group cursor-pointer">
+                <summary className="flex items-center justify-between font-semibold text-gray-900 list-none text-sm">
                   {faq.q}
-                  <svg className="w-5 h-5 text-[#E8195A] group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#E8195A] group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-4 text-gray-400 leading-relaxed">{faq.a}</p>
+                <p className="mt-3 text-gray-500 text-sm leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
         </div>
 
         {/* Trust badges */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {[
-            { icon: "🌿", title: "100% Värsked", desc: "Päevased lilled aiast" },
-            { icon: "🚚", title: "Tasuta tarne", desc: "Kõigile tellijatele" },
-            { icon: "💳", title: "Turvaline makse", desc: "Stripe kaitsega" },
-            { icon: "🔄", title: "Paindlik", desc: "Tühista igal ajal" },
+            { title: "100% Värsked", desc: "Päevased lilled aiast" },
+            { title: "Tasuta tarne", desc: "Kõigile tellijatele" },
+            { title: "Turvaline makse", desc: "Stripe kaitsega" },
+            { title: "Paindlik", desc: "Tühista igal ajal" },
           ].map((b) => (
-            <div key={b.title} className="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6">
-              <div className="text-4xl mb-3">{b.icon}</div>
-              <div className="font-bold mb-1">{b.title}</div>
-              <div className="text-gray-500 text-sm">{b.desc}</div>
+            <div key={b.title} className="bg-[#FFF0F5] rounded-2xl p-6 text-center">
+              <div className="font-semibold text-gray-900 text-sm mb-1">{b.title}</div>
+              <div className="text-gray-400 text-xs">{b.desc}</div>
             </div>
           ))}
         </div>
