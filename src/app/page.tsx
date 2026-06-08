@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1490750967868-88df5691cc4b?w=1200&q=85&auto=format"
+            src="https://images.unsplash.com/photo-1490750967868-88df5691cc4b?w=1200&q=85&auto=format&fit=crop"
             alt="Lilled"
             className="w-full h-full object-cover"
           />
