@@ -95,7 +95,7 @@ export const products = [
     price: 39.99,
     category: "Orhideed",
     description: "Elegaantsed valged orhideed luksuslikuks kingituseks",
-    image: "https://images.unsplash.com/photo-1584553421349-3557471bed79?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-OcFMl43VjCQ?w=800&q=85&auto=format",
     inStock: true,
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     price: 15.99,
     category: "Lavendel",
     description: "Aroomne lavendelikimp lõõgastumiseks",
-    image: "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-74QmIJDTD-c?w=800&q=85&auto=format",
     inStock: false,
   },
   {
@@ -113,7 +113,7 @@ export const products = [
     price: 22.99,
     category: "Hortensiad",
     description: "Uhked sinised hortensiad atmosfääri loomiseks",
-    image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-R4KrIgWXrLw?w=800&q=85&auto=format",
     inStock: true,
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     price: 49.99,
     category: "Segakimbud",
     description: "Hoolikalt valitud segakimp kõige erilisematele hetkedele",
-    image: "https://images.unsplash.com/photo-1561181286-d3f5c0c3d157?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-Hozqz2lt7Zg?w=800&q=85&auto=format",
     inStock: true,
   },
   {
