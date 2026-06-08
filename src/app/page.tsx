@@ -8,7 +8,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1490750967868-88df5691cc4b?w=1200&q=85&auto=format&fit=crop"
+            src="/images/hero.jpg"
             alt="Lilled"
             className="w-full h-full object-cover"
           />
@@ -202,9 +202,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Mari T.", text: "Absoluutselt armastan FlowerPoweri! Iga nädal saan värsked lilled ja olen väga rahul teenuse kvaliteediga.", rating: 5, plan: "Premium", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" },
-              { name: "Jaan K.", text: "Luksusplaan on parim asi, mida olen kunagi tellinud. Lilled on alati värsked ja ilusad!", rating: 5, plan: "Luksus", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" },
-              { name: "Liisa M.", text: "Väga mugav teenus! Alati täpne kohaletoimetamine ja lilled on täpselt sellised, nagu lubati.", rating: 5, plan: "Alus", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" },
+              { name: "Mari T.", text: "Absoluutselt armastan FlowerPoweri! Iga nädal saan värsked lilled ja olen väga rahul teenuse kvaliteediga.", rating: 5, plan: "Premium", avatar: "/images/about.jpg" },
+              { name: "Jaan K.", text: "Luksusplaan on parim asi, mida olen kunagi tellinud. Lilled on alati värsked ja ilusad!", rating: 5, plan: "Luksus", avatar: "/images/store.jpg" },
+              { name: "Liisa M.", text: "Väga mugav teenus! Alati täpne kohaletoimetamine ja lilled on täpselt sellised, nagu lubati.", rating: 5, plan: "Alus", avatar: "/images/events.jpg" },
             ].map((t) => (
               <div key={t.name} className="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 hover:border-[#E8195A] transition-all">
                 <div className="flex gap-1 mb-4">{Array(t.rating).fill(0).map((_, i) => <span key={i} className="text-[#E8195A]">★</span>)}</div>
@@ -225,7 +225,7 @@ export default function Home() {
       {/* CTA */}
       <section className="py-24 bg-[#E8195A] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=1600&h=400&fit=crop&auto=format" alt="bg" className="w-full h-full object-cover" />
+          <img src="/images/services.jpg" alt="bg" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-6xl font-black text-white mb-6">Alusta täna,<br />naerata homme</h2>
