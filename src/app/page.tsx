@@ -8,11 +8,11 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=1600&h=900&fit=crop"
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&h=900&fit=crop&auto=format"
             alt="Lilled"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/20" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -225,7 +225,7 @@ export default function Home() {
       {/* CTA */}
       <section className="py-24 bg-[#E8195A] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1487530811015-780f4abe7c16?w=1600&h=400&fit=crop" alt="bg" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=1600&h=400&fit=crop&auto=format" alt="bg" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-6xl font-black text-white mb-6">Alusta täna,<br />naerata homme</h2>

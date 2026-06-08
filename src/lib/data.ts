@@ -13,7 +13,7 @@ export const subscriptionPlans = [
     ],
     color: "from-pink-900 to-black",
     popular: false,
-    image: "https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=400&h=300&fit=crop&auto=format",
   },
   {
     id: "premium",
@@ -30,7 +30,7 @@ export const subscriptionPlans = [
     ],
     color: "from-pink-800 to-pink-950",
     popular: true,
-    image: "https://images.unsplash.com/photo-1487530811015-780f4abe7c16?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&h=300&fit=crop&auto=format",
   },
   {
     id: "luxe",
@@ -48,7 +48,7 @@ export const subscriptionPlans = [
     ],
     color: "from-rose-900 to-black",
     popular: false,
-    image: "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1561181286-d3f5c0c3d157?w=400&h=300&fit=crop&auto=format",
   },
 ];
 
@@ -59,7 +59,7 @@ export const products = [
     price: 24.99,
     category: "Roosid",
     description: "Klassikalised punased roosid armastuse väljendamiseks",
-    image: "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     price: 19.99,
     category: "Tulipiid",
     description: "Värvilised kevadised tulipiid, mis toovad rõõmu",
-    image: "https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     price: 29.99,
     category: "Peonid",
     description: "Lopsakad roosad peonid, täis romantilisust",
-    image: "https://images.unsplash.com/photo-1487530811015-780f4abe7c16?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     price: 17.99,
     category: "Päevalilled",
     description: "Säravad päevalilled, mis toovad suvise tuju",
-    image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     price: 39.99,
     category: "Orhideed",
     description: "Elegaantsed valged orhideed luksuslikuks kingituseks",
-    image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1584553421349-3557471bed79?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     price: 15.99,
     category: "Lavendel",
     description: "Aroomne lavendelikimp lõõgastumiseks",
-    image: "https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=500&h=400&fit=crop&auto=format",
     inStock: false,
   },
   {
@@ -113,7 +113,7 @@ export const products = [
     price: 22.99,
     category: "Hortensiad",
     description: "Uhked sinised hortensiad atmosfääri loomiseks",
-    image: "https://images.unsplash.com/photo-1566230724840-52b9cc4f20b8?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     price: 49.99,
     category: "Segakimbud",
     description: "Hoolikalt valitud segakimp kõige erilisematele hetkedele",
-    image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1561181286-d3f5c0c3d157?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     price: 34.99,
     category: "Segakimbud",
     description: "Romantiline roosa segakimp armsamale",
-    image: "https://images.unsplash.com/photo-1464826612729-4b8a9aed3b65?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=500&h=400&fit=crop&auto=format",
     inStock: true,
   },
 ];
