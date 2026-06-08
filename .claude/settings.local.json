@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest *)",
+      "Bash(mkdir -p /tmp/fp-build)",
+      "Read(//tmp/**)",
+      "Bash(cp *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
