@@ -59,7 +59,7 @@ export const products = [
     price: 24.99,
     category: "Roosid",
     description: "Klassikalised punased roosid armastuse väljendamiseks",
-    image: "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-XCUqM2TiPFQ?w=800&q=85&auto=format",
     inStock: true,
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     price: 19.99,
     category: "Tulipiid",
     description: "Värvilised kevadised tulipiid, mis toovad rõõmu",
-    image: "https://images.unsplash.com/photo-1490750967868-88df5691cc30?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-M9t2bPAicfM?w=800&q=85&auto=format",
     inStock: true,
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     price: 29.99,
     category: "Peonid",
     description: "Lopsakad roosad peonid, täis romantilisust",
-    image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-ZoLqz3VXo4A?w=800&q=85&auto=format",
     inStock: true,
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     price: 17.99,
     category: "Päevalilled",
     description: "Säravad päevalilled, mis toovad suvise tuju",
-    image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=500&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-iEfH3F_W5HU?w=800&q=85&auto=format",
     inStock: true,
   },
   {
