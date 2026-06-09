@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { subscriptionPlans } from "@/lib/data";
 import { getProducts } from "@/lib/supabase";
+import ContactForm from "@/components/ContactForm";
 
 export default async function Home() {
   const products = await getProducts();
@@ -247,6 +248,54 @@ export default async function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact — white */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.25em] text-[#E8195A] uppercase mb-4">
+                Võta ühendust
+              </p>
+              <h2
+                className="text-4xl sm:text-5xl text-gray-900 mb-6"
+                style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+              >
+                Küsi julgelt,<br />vastame hea meelega
+              </h2>
+              <p className="text-gray-500 text-base leading-relaxed mb-10 max-w-sm">
+                Kas sul on küsimusi lillede, tarnete või tellimiste kohta? Kirjuta meile — vastame
+                <strong className="text-gray-700"> 24 tunni jooksul</strong>.
+              </p>
+              <div className="space-y-5">
+                {[
+                  { icon: "📍", label: "Aadress", value: "Tartu mnt 18, Tallinn" },
+                  { icon: "📞", label: "Telefon", value: "+372 5555 1234" },
+                  { icon: "✉️", label: "E-post", value: "info@flowerpower.ee" },
+                  { icon: "🕐", label: "Lahtiolekuajad", value: "E–R: 9:00 – 18:00" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-4">
+                    <span className="text-xl mt-0.5">{item.icon}</span>
+                    <div>
+                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-0.5">{item.label}</p>
+                      <p className="text-sm text-gray-700">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#FFF0F5] rounded-3xl p-8 sm:p-10">
+              <h3
+                className="text-2xl text-gray-900 mb-6"
+                style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+              >
+                Saada meile sõnum
+              </h3>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

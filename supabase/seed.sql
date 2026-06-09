@@ -1,4 +1,14 @@
--- Run this in your Supabase SQL Editor to set up the products table
+-- Run this in your Supabase SQL Editor to set up the database tables
+
+create table if not exists enquiries (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null,
+  message text not null,
+  created_at timestamptz default now()
+);
+
+
 
 create table if not exists products (
   id uuid primary key default gen_random_uuid(),
