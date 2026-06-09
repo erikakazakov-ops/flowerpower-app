@@ -16,7 +16,13 @@
       "Bash(git push *)",
       "Bash(gh auth *)",
       "Bash(curl *)",
-      "Bash(python3 -c \"import sys,json; repos=json.load\\(sys.stdin\\); [print\\(r['full_name']\\) for r in repos]\")"
+      "Bash(python3 -c \"import sys,json; repos=json.load\\(sys.stdin\\); [print\\(r['full_name']\\) for r in repos]\")",
+      "Skill(run)",
+      "Bash(supabase --version)",
+      "Bash(psql --version)",
+      "Bash(cat)",
+      "Bash(node /tmp/create_table.mjs)",
+      "Bash(node *)"
     ]
   }
 }

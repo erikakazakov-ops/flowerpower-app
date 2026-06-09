@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { subscriptionPlans, products } from "@/lib/data";
+import { subscriptionPlans } from "@/lib/data";
+import { getProducts } from "@/lib/supabase";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getProducts();
+
   return (
     <>
       {/* Hero — editorial split */}
@@ -183,7 +186,7 @@ export default function Home() {
                     alt={product.name}
                     className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  {!product.inStock && (
+                  {!product.in_stock && (
                     <div className="absolute inset-0 bg-white/60 flex items-center justify-center">
                       <span className="text-gray-500 font-medium text-sm">Otsas</span>
                     </div>
