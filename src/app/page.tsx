@@ -60,6 +60,56 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Concierge CTA — full pink editorial */}
+      <section className="py-24 bg-[#E8195A] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.25em] text-white/50 uppercase mb-6">
+                Uus — AI lillenõustaja
+              </p>
+              <h2
+                className="text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-6"
+                style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic" }}
+              >
+                Sinu isiklik<br />
+                lillenõustaja.
+              </h2>
+              <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-md">
+                Vasta 5 küsimusele ja meie AI valib sulle täiuslikud lilled — iga kord, automaatselt.
+              </p>
+              <Link
+                href="/concierge"
+                className="inline-flex items-center justify-center bg-white text-[#E8195A] px-9 py-4 rounded-full font-semibold text-sm hover:bg-[#FFF0F5] transition-all hover:scale-105 active:scale-100"
+              >
+                Alusta tasuta →
+              </Link>
+            </div>
+
+            <div className="hidden lg:flex flex-col gap-8">
+              {[
+                { n: "01", title: "Räägi meile oma maitsest", desc: "Stiil, värvid, kodu — 5 lihtsat küsimust." },
+                { n: "02", title: "AI koostab sinu profiili", desc: "Isikupärastatud lillemaailm, mis sobib just sulle." },
+                { n: "03", title: "Lilled saabuvad automaatselt", desc: "Õiged lilled, õigel ajal, ilma pingutuseta." },
+              ].map((s) => (
+                <div key={s.n} className="flex items-start gap-6">
+                  <div
+                    className="text-6xl font-bold text-white/15 leading-none shrink-0 w-16"
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {s.n}
+                  </div>
+                  <div className="pt-2">
+                    <p className="font-semibold text-white text-base mb-1">{s.title}</p>
+                    <p className="text-white/55 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works — lilac block */}
       <section className="py-24 bg-[#EDE0FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

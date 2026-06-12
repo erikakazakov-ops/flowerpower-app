@@ -22,7 +22,15 @@
       "Bash(psql --version)",
       "Bash(cat)",
       "Bash(node /tmp/create_table.mjs)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Skill(claude-api)",
+      "Bash(timeout 40 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
+      "Bash(chromium-cli *)",
+      "Bash(npm list *)",
+      "Bash(npx playwright *)",
+      "Bash($CHROME *)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(break)"
     ]
   }
 }

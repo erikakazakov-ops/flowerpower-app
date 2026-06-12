@@ -1,5 +1,17 @@
 -- Run this in your Supabase SQL Editor to set up the database tables
 
+create table if not exists customer_profiles (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  email text not null,
+  home_style text not null,
+  colour_preference text not null,
+  occasions jsonb not null default '[]',
+  delivery_frequency text not null,
+  created_at timestamptz default now()
+);
+
+
 create table if not exists enquiries (
   id uuid primary key default gen_random_uuid(),
   name text not null,
