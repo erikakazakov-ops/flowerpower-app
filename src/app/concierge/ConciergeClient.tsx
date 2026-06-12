@@ -724,6 +724,7 @@ function ConfirmationScreen({ data }: { data: WizardData }) {
   const freqLabel = DELIVERY_FREQS.find((f) => f.id === data.deliveryFreq)?.label ?? '';
 
   const [agentStage, setAgentStage] = useState<'idle' | 'agent1' | 'agent2' | 'agent3' | 'done' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
   const [recommendation, setRecommendation] = useState('');
   const [recommendError, setRecommendError] = useState('');
 
@@ -759,12 +760,15 @@ function ConfirmationScreen({ data }: { data: WizardData }) {
               if (cancelled) return;
               if (event.stage === 'done') {
                 setAgentStage('done');
+                setStatusMessage('');
                 setRecommendation(event.result ?? '');
               } else if (event.stage === 'error') {
                 setAgentStage('error');
+                setStatusMessage('');
                 setRecommendError(event.message);
               } else {
                 setAgentStage(event.stage as 'agent1' | 'agent2' | 'agent3');
+                setStatusMessage(event.message);
               }
             } catch { /* ignore parse errors */ }
           }
@@ -772,6 +776,7 @@ function ConfirmationScreen({ data }: { data: WizardData }) {
       } catch {
         if (!cancelled) {
           setAgentStage('error');
+          setStatusMessage('');
           setRecommendError('Soovituse laadimine ebaõnnestus.');
         }
       }
@@ -823,9 +828,9 @@ function ConfirmationScreen({ data }: { data: WizardData }) {
                 const isDone = currentIdx > stageIdx;
                 const isActive = agentStage === stage.id;
                 return (
-                  <div key={stage.id} className="flex items-center gap-3">
+                  <div key={stage.id} className="flex items-start gap-3">
                     <div
-                      className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      className={`w-5 h-5 mt-0.5 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
                         isDone
                           ? 'bg-[#E8195A]'
                           : isActive
@@ -841,22 +846,24 @@ function ConfirmationScreen({ data }: { data: WizardData }) {
                         <div className="w-2 h-2 bg-[#E8195A] rounded-full animate-pulse" />
                       ) : null}
                     </div>
-                    <span
-                      className={`text-sm transition-all duration-200 ${
-                        isActive
-                          ? 'text-gray-900 font-semibold'
-                          : isDone
-                          ? 'text-gray-300 line-through'
-                          : 'text-gray-300'
-                      }`}
-                    >
-                      {stage.label}
-                    </span>
-                    {isActive && (
-                      <span className="text-xs text-[#E8195A] ml-auto animate-pulse">
-                        töötab…
+                    <div className="flex-1 min-w-0">
+                      <span
+                        className={`text-sm transition-all duration-200 ${
+                          isActive
+                            ? 'text-gray-900 font-semibold'
+                            : isDone
+                            ? 'text-gray-300 line-through'
+                            : 'text-gray-300'
+                        }`}
+                      >
+                        {stage.label}
                       </span>
-                    )}
+                      {isActive && statusMessage && (
+                        <p className="text-xs text-[#E8195A] mt-0.5 animate-pulse truncate">
+                          {statusMessage}
+                        </p>
+                      )}
+                    </div>
                   </div>
                 );
               })}
